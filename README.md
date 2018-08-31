@@ -29,10 +29,10 @@ This assignment, as outlined below, must be complete in totality by:
 - Be a working, interactive, React application.
 - Be build using Create React App Minimal
 - Have at least 3 separate components, each with their own folder in your application.
-- Either pull data into the application using an API *or* have state persist in your application using localStorage.
+- Either pull data into the application using an API *or* 
+ both have state persist in your application using localStorage and have two distinct "views" in your application using conditional rendering.
 - Be deployed via Heroku.
 - Be styled with CSS.
-- Not use any non-React dom manipulation
 - Use flexbox or CSS grid for layout and positioning (** no floats ** except to wrap text around an image!)
 
 
@@ -42,6 +42,7 @@ This assignment, as outlined below, must be complete in totality by:
 - Be written with semantic, camelCase JavaScript variable names
 - Be written with kebab-case CSS class names
 - No console.log() or commented out code in final version
+- Not use any non-React dom manipulation
 
 #### Your README must:
 
