@@ -49,10 +49,6 @@ This assignment, as outlined below, must be complete in totality by:
 - Brief description of the project
 - A link to your deployed project
 
-**Bonus**
-
-- Include a "Tutorial Section" of this landing page (why: instructions help think through the "UX" of your project)
-
 ## Necessary Deliverables
 
 #### For the proposal:
