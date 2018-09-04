@@ -27,10 +27,11 @@ This assignment, as outlined below, must be complete in totality by:
 #### Your website must:
 
 - Be a working, interactive, React application.
-- Be build using Create React App Minimal
+- Include one of the following:
+  - Pull data into the application using an API
+  - Persist data using localStorage and have two distinct "views" in your application using conditional rendering
 - Have at least 3 separate components, each with their own folder in your application.
-- Either pull data into the application using an API *or* 
- both have state persist in your application using localStorage and have two distinct "views" in your application using conditional rendering.
+ - Be build using Create React App Minimal.
 - Be deployed via Heroku.
 - Be styled with CSS.
 - Use flexbox or CSS grid for layout and positioning (** no floats ** except to wrap text around an image!)
