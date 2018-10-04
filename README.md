@@ -12,16 +12,6 @@ As part of this project, you'll be required to show your project to your instruc
 
 Show us what you've got!
 
-## Due Dates
-
-Your proposal for this project, as outlined in the proposal section below, must be completed and ready to present for approval by:
-
-**Wednesday, September 5th at 9:00 AM**
-
-This assignment, as outlined below, must be complete in totality by:
-
-**Tuesday, September 11th at 9:00 AM**.
-
 ## Requirements
 
 #### Your website must:
