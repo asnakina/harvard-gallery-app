@@ -32,7 +32,7 @@ This assignment, as outlined below, must be complete in totality by:
   - Persist data using localStorage and have two distinct "views" in your application using conditional rendering
 - Have at least 3 separate components, each with their own folder in your application.
  - Be build using Create React App Minimal.
-- Be deployed via Heroku.
+- Be deployed via GitHub, Firebase.
 - Be styled with CSS.
 - Use flexbox or CSS grid for layout and positioning (** no floats ** except to wrap text around an image!)
 
