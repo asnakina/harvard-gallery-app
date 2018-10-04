@@ -34,7 +34,7 @@ This assignment, as outlined below, must be complete in totality by:
  - Be build using Create React App Minimal.
 - Be deployed via GitHub, Firebase.
 - Be styled with CSS.
-- Use flexbox or CSS grid for layout and positioning (** no floats ** except to wrap text around an image!)
+- Use flexbox layout...or learn something new like CSS Grid.
 
 
 #### Your code must:
