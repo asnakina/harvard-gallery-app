@@ -41,9 +41,9 @@ This assignment, as outlined below, must be complete in totality by:
 
 - Be properly indented
 - Be written with semantic, camelCase JavaScript variable names
-- Be written with kebab-case CSS class names
+- Be written with kebab-case (dashes) CSS class names
 - No console.log() or commented out code in final version
-- Not use any non-React dom manipulation
+- Only React for dom manipulation
 
 #### Your README must:
 
