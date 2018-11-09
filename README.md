@@ -34,7 +34,7 @@ Show us what you've got!
 - Be properly indented
 - Be written with semantic, camelCase JavaScript variable names
 - Be written with kebab-case (dashes) CSS class names
-- No console.log() or commented out code in final version
+- No `console.log()` or commented out code in final version
 - Only React for DOM manipulation
 
 #### Your README must include:
