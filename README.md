@@ -23,7 +23,7 @@ Show us what you've got!
     -TRY OUT your API in insomnia before you get too emotionally invested in it, to make sure it works the way you think it  does...
     - Have two distinct "views" in your application using conditional rendering
 - Have at least 4 separate components, each with their own folder in your application.
-- Be build using Create React App
+- Be built using Create React App
 - Be styled with CSS.
 - Use flexbox layout...or learn something new like CSS Grid.
 - Use functional components and class components appropriately  
