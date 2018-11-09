@@ -16,10 +16,11 @@ Show us what you've got!
 #### Your website must:
 
 - Be a working, interactive, React application.
-- Include one of the following:
+- Include **one** of the following:
     - Pull data into the application using an API  
-    -[List of Public APIs](https://github.com/toddmotto/public-apis)  
-    -[More APIs](https://github.com/abhishekbanthia/Public-APIs)  
+        [List of Public APIs](https://github.com/toddmotto/public-apis)  
+        [More APIs](https://github.com/abhishekbanthia/Public-APIs)  
+    -TRY OUT your API in insomnia before you get too emotionally invested in it, to make sure it works the way you think it  does...
     - Have two distinct "views" in your application using conditional rendering
 - Have at least 4 separate components, each with their own folder in your application.
 - Be build using Create React App
