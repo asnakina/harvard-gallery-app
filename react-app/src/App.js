@@ -5,6 +5,7 @@ import NavBar from './components/NavBar';
 import Images from './components/Images';
 import LandingPage from './components/LandingPage';
 import Videos from './components/Videos';
+import ImagesList from './components/ImagesList';
 //import Groups from './components/Groups';
 //import Classification from './components/Classification';
 //import Addresses from
@@ -23,21 +24,25 @@ class App extends Component {
   super(props);
   this.state = {
     galleryData: [],
-    // videos: [],
-    // images: [],
+    videoData: [],
+    imageData: [],
     // baseimageurl: [],
     // renditionnumber: '',
     currentView: '',
     // value: '',
     imageURL: '',
-    videoURL: ''
+    videoURL: '',
+    lastNum: 1,
 
   }
   this.handleClick = this.handleClick.bind(this);
  }
 
  async fetchData(category) {
-   const newUrl = `${BASE_URL}${category}?apikey=${process.env.REACT_APP_GALLERY_API_KEY}&page=1`;
+   const newUrl = `${BASE_URL}${category}?apikey=${process.env.REACT_APP_GALLERY_API_KEY}&page=${this.state.lastNum}`;
+   // if (category === 'image') {
+   //   this.setState({imageURL: newUrl})
+   // }
    const resp = await axios(newUrl);
     console.log(resp);
    this.setState({
@@ -47,13 +52,26 @@ class App extends Component {
  }
 
  next(url) {
-    const storedURL =  url.slice(0, (url.length -1))
-    const lastNum = url[url.length - 1] //it's a string
+   // const url = this.state.imageURL;
+   let storedURL = '';
+   for(let i=0; i < url.length -1; i++) {
+     storedURL += url[i];
+   }
+   // let arr = url.split('');
+   // let lastNum =  arr.pop;
+   // let storedURL = arr.join('');
+  //  let storedURL =  url.substr(0, (url.length - 1));
+    let lastNum = url[url.length - 1] //it's a string
     lastNum = Number(lastNum) + 1; //it's a number now
-    lastNum = String(lastNum) //it's a string back
-    return (
-      storedURL + lastNum
-    )
+    lastNum = String(lastNum); //it's a string back
+    // return (
+    //   storedURL + lastNum
+    // )
+    this.setState({
+      // imageURL:  storedURL + lastNum,
+      lastNum: lastNum
+    })
+    this.getView();
  }
 
  handleClick(e) {
@@ -71,20 +89,19 @@ class App extends Component {
    const view = this.state.currentView;
    switch(view) {
      case 'imagesView':
-     if (this.state.galleryData.length === 0) {
-       this.fetchData('image');
-     };
      //console.log(this.state.galleryData)
      return (
-       <div>
-        {this.state.galleryData.map(e => {
-          return (
-            <Images imageData = {e.baseimageurl} />
-          )
-        })}
-       </div>);
+       <ImagesList />
+       //<div>
+       //   <button onClick = {this.next}>Next</button>
+       //  {this.state.galleryData.map(e => {
+       //    return (
+       //      <Images imageData = {e.baseimageurl} />
+       //    )
+       //  })}
+       // </div>
+     );
        case 'videosView':
-
        this.fetchData('video');
        return (
          <div>
