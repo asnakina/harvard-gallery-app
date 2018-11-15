@@ -4,7 +4,7 @@ import axios from 'axios';
 import NavBar from './components/NavBar';
 import Images from './components/Images';
 import LandingPage from './components/LandingPage';
-//import Videos from './components/Videos';
+import Videos from './components/Videos';
 //import Groups from './components/Groups';
 //import Classification from './components/Classification';
 //import Addresses from
@@ -28,19 +28,32 @@ class App extends Component {
     // baseimageurl: [],
     // renditionnumber: '',
     currentView: '',
-    // value: ''
+    // value: '',
+    imageURL: '',
+    videoURL: ''
+
   }
   this.handleClick = this.handleClick.bind(this);
  }
 
  async fetchData(category) {
-   const newUrl = `${BASE_URL}${category}?apikey=${process.env.REACT_APP_GALLERY_API_KEY}&1`;
+   const newUrl = `${BASE_URL}${category}?apikey=${process.env.REACT_APP_GALLERY_API_KEY}&page=1`;
    const resp = await axios(newUrl);
     console.log(resp);
    this.setState({
      galleryData: resp.data.records
    })
    console.log(this.state.galleryData)
+ }
+
+ next(url) {
+    const storedURL =  url.slice(0, (url.length -1))
+    const lastNum = url[url.length - 1] //it's a string
+    lastNum = Number(lastNum) + 1; //it's a number now
+    lastNum = String(lastNum) //it's a string back
+    return (
+      storedURL + lastNum
+    )
  }
 
  handleClick(e) {
@@ -58,11 +71,35 @@ class App extends Component {
    const view = this.state.currentView;
    switch(view) {
      case 'imagesView':
-     this.fetchData('image');
-     console.log(this.state.galleryData)
-       return <Images imageData = {this.state.galleryData}/>
+     if (this.state.galleryData.length === 0) {
+       this.fetchData('image');
+     };
+     //console.log(this.state.galleryData)
+     return (
+       <div>
+        {this.state.galleryData.map(e => {
+          return (
+            <Images imageData = {e.baseimageurl} />
+          )
+        })}
+       </div>);
+       case 'videosView':
+
+       this.fetchData('video');
+       return (
+         <div>
+         {this.state.galleryData.map(e => {
+           return (
+             <Videos videolinkData = {e.primaryurl}
+                  videoDescrData = {e.description}
+             />
+           )
+         })}
+         </div>)
        case 'mainView':
        return <LandingPage />
+       // case 'addressesView':
+       // return <Addresses addressData = {this.state.galleryData}
      default:
        return <LandingPage />
    }
@@ -89,11 +126,7 @@ class App extends Component {
      );
    }
  }
-//<iframe src={`https://player.vimeo.com/video/${Num}?title=0&byline=0&portrait=0`} width="640" height="427" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-//<iframe src="https://player.vimeo.com//video52099684?title=0&byline=0&portrait=0" width="640" height="427" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-//<video>
-//<source src={e.primaryurl}/>
-//</video>
+
 
 export default App;
 
