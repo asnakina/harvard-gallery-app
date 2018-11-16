@@ -6,7 +6,7 @@ import Images from './components/Images';
 import LandingPage from './components/LandingPage';
 import Videos from './components/Videos';
 import ImagesList from './components/ImagesList';
-//import Groups from './components/Groups';
+import GalleryList from './components/GalleryList';
 //import Classification from './components/Classification';
 import AddressesList from './components/AddressesList';
 import ZeroPage from './components/ZeroPage';
@@ -18,7 +18,7 @@ const BASE_URL = `https://api.harvardartmuseums.org/`
 // const GALLERY_URL = 'https://api.harvardartmuseums.org/gallery?apikey=c618a9f0-e782-11e8-ac8f-15dc77ff48b1&'
 // const IMAGES_URL = 'https://api.harvardartmuseums.org/image?apikey=c618a9f0-e782-11e8-ac8f-15dc77ff48b1&'
 // const ADDRESSES_URL = 'https://api.harvardartmuseums.org/site?apikey=c618a9f0-e782-11e8-ac8f-15dc77ff48b1&'
-// const CLASSIFICATION_URL = 'https://api.harvardartmuseums.org/classiffications?apikey=c618a9f0-e782-11e8-ac8f-15dc77ff48b1&'
+// const CLASSIFICATION_URL = 'https://api.harvardartmuseums.org/classification/?apikey=c618a9f0-e782-11e8-ac8f-15dc77ff48b1&'
 
 class App extends Component {
   constructor(props) {
@@ -63,7 +63,7 @@ class App extends Component {
  }
 
  prev() {
-   if(this.state.lastNum >= 1){
+   if(this.state.lastNum >= 2){
    this.setState({
      lastNum: this.state.lastNum - 1
    });
@@ -74,7 +74,7 @@ class App extends Component {
  }
 
  handleClick(e) {
-   debugger
+   
    const value = e.target.value;
    this.setState({currentView: value})
  }
@@ -93,7 +93,11 @@ class App extends Component {
        prevProps = {this.prev}
        />
      );
-     //<div>
+     case 'galleryView':
+     return(
+       <GalleryList />
+     );
+     // <div>
      //   <button onClick = {this.next}>Next</button>
      //  {this.state.galleryData.map(e => {
      //    return (
