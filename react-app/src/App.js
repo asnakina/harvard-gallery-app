@@ -8,7 +8,8 @@ import Videos from './components/Videos';
 import ImagesList from './components/ImagesList';
 //import Groups from './components/Groups';
 //import Classification from './components/Classification';
-//import Addresses from
+import AddressesList from './components/AddressesList';
+import ZeroPage from './components/ZeroPage';
 
 //how can i type only 1 BASE_URL and change only {TOPIC} in the middle and num. of page in the end?
 const BASE_URL = `https://api.harvardartmuseums.org/`
@@ -25,10 +26,11 @@ class App extends Component {
   this.state = {
     galleryData: [],
     videoData: [],
-    imageData: [],
+    // imageData: [],
+    // addressesData: [],
     // baseimageurl: [],
     // renditionnumber: '',
-    currentView: '',
+    currentView: 'zeroView',
     // value: '',
     imageURL: '',
     videoURL: '',
@@ -36,6 +38,8 @@ class App extends Component {
 
   }
   this.handleClick = this.handleClick.bind(this);
+  this.next = this.next.bind(this);
+  this.prev = this.prev.bind(this);
  }
 
  async fetchData(category) {
@@ -51,55 +55,55 @@ class App extends Component {
    console.log(this.state.galleryData)
  }
 
- next(url) {
-   // const url = this.state.imageURL;
-   let storedURL = '';
-   for(let i=0; i < url.length -1; i++) {
-     storedURL += url[i];
-   }
-   // let arr = url.split('');
-   // let lastNum =  arr.pop;
-   // let storedURL = arr.join('');
-  //  let storedURL =  url.substr(0, (url.length - 1));
-    let lastNum = url[url.length - 1] //it's a string
-    lastNum = Number(lastNum) + 1; //it's a number now
-    lastNum = String(lastNum); //it's a string back
-    // return (
-    //   storedURL + lastNum
-    // )
+ next() {
     this.setState({
-      // imageURL:  storedURL + lastNum,
-      lastNum: lastNum
-    })
+       lastNum: this.state.lastNum + 1
+    });
     this.getView();
  }
 
+ prev() {
+   if(this.state.lastNum >= 1){
+   this.setState({
+     lastNum: this.state.lastNum - 1
+   });
+   this.getView()
+  } else {
+    alert('No way back')
+  }
+ }
+
  handleClick(e) {
+   debugger
    const value = e.target.value;
    this.setState({currentView: value})
  }
 
- componentDidMount() {
-   // this.getVideos();
-   // this.getImages();
-   // this.fetchData();
- }
-
+//created new class Components Lists in order to prevent calling data again and again from switch statement
+//and before i used only 1 URL with changing {category}, but now other class Components call certain URLs.
  getView() {
    const view = this.state.currentView;
    switch(view) {
      case 'imagesView':
      //console.log(this.state.galleryData)
      return (
-       <ImagesList />
-       //<div>
-       //   <button onClick = {this.next}>Next</button>
-       //  {this.state.galleryData.map(e => {
-       //    return (
-       //      <Images imageData = {e.baseimageurl} />
-       //    )
-       //  })}
-       // </div>
+       <ImagesList
+       nextProps = {this.next}
+       lastNumProps = {this.state.lastNum}
+       prevProps = {this.prev}
+       />
+     );
+     //<div>
+     //   <button onClick = {this.next}>Next</button>
+     //  {this.state.galleryData.map(e => {
+     //    return (
+     //      <Images imageData = {e.baseimageurl} />
+     //    )
+     //  })}
+     // </div>
+     case 'addressesView':
+     return(
+       <AddressesList />
      );
        case 'videosView':
        this.fetchData('video');
@@ -117,33 +121,25 @@ class App extends Component {
        return <LandingPage />
        // case 'addressesView':
        // return <Addresses addressData = {this.state.galleryData}
-     default:
-       return <LandingPage />
-   }
+       case 'zeroView':
+       return <ZeroPage handleClick = {this.handleClick} />
+     }
  }
 
- //   async getImages() {
- //     // const allImages = await axios.get(`${BASE_URL}image?apikey=${process.env.API_KEY}`);
- //     // console.log('this is allImages', allImages)
- //     this.setState({
- //       // images: allImages.data.records,
- //       baseimageurl: (allImages.data.records.map(image => (image.baseimageurl)
- //     ))
- // }
-
   render() {
+    //writing ternary operator for Zeropage
     return (
       <div className="App">
+      {this.state.currentView === "zeroView" ? null :
          <div>
-          <NavBar handleClick={this.handleClick}/>
-         </div>
+           <NavBar handleClick={this.handleClick} />
+         </div>}
       {/*} <Images getImages={this.getImages} imageShowUp={this.state.baseimageurl} />*/}
           {this.getView()}
        </div>
      );
    }
  }
-
 
 export default App;
 
@@ -152,9 +148,40 @@ export default App;
 
 
 
+// debugger
+// const url = this.state.imageURL;
+// let storedURL = '';
+// for(let i=0; i < url.length -1; i++) {
+//   storedURL += url[i];
+// }
+// let arr = url.split('');
+// let lastNum =  arr.pop;
+// let storedURL = arr.join('');
+//  let storedURL =  url.substr(0, (url.length - 1));
+ // let lastNum = url[url.length - 1] //it's a string
+ // lastNum = Number(lastNum) + 1; //it's a number now
+ // lastNum = String(lastNum); //it's a string back
+ // return (
+ //   storedURL + lastNum
+ // )
+ // this.setState({
+ //   // imageURL:  storedURL + lastNum,
+ //   lastNum: lastNum
+ // })
 
-
-
+// componentDidMount() {
+//   // this.getVideos();
+//   // this.getImages();
+//   // this.fetchData();
+// }
+//   async getImages() {
+//     // const allImages = await axios.get(`${BASE_URL}image?apikey=${process.env.API_KEY}`);
+//     // console.log('this is allImages', allImages)
+//     this.setState({
+//       // images: allImages.data.records,
+//       baseimageurl: (allImages.data.records.map(image => (image.baseimageurl)
+//     ))
+// }
 //     // for (let i=0; i < images.length; i++) {
 //     // renditionnumber: allImages.data.records.map(rNumber => rNumber.renditionnumber)
 //   })

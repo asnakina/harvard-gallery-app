@@ -5,3 +5,15 @@
 .imgClass {
   width: 500px;
 }
+/* background-image: url('./image.png'); */
+
+.ZeroPageImg {
+  background-image: url('./ZeroPage.jpg');
+  width: 200px;
+  height: 100px;
+}
+
+/* .smallImg {
+  width: 300px;
+  height: 200px;
+} */

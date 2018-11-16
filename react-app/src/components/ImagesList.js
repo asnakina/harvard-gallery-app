@@ -17,13 +17,20 @@ class ImagesList extends Component {
    await this.fetchData();
  }
 
+ componentDidUpdate(prevProps){
+   if(prevProps.lastNumProps !== this.props.lastNumProps) {
+       // imageData: this.imageData;
+       this.fetchData()
+   }
+ }
+
   async fetchData() {
-    const newUrl = `${BASE_URL}image?apikey=${process.env.REACT_APP_GALLERY_API_KEY}&page=${this.state.lastNum}`;
+    const newUrl = `${BASE_URL}image?apikey=${process.env.REACT_APP_GALLERY_API_KEY}&page=${this.props.lastNumProps}`;
     // if (category === 'image') {
     //   this.setState({imageURL: newUrl})
     // }
     const resp = await axios(newUrl);
-     console.log(resp);
+    console.log(resp);
     this.setState({
       imageData: resp.data.records
     })
@@ -33,9 +40,13 @@ class ImagesList extends Component {
   render(){
   return (
     <div>
+    <button type="button" onClick = {this.props.prevProps}>Previous</button>
+    <button type="button" onClick = {this.props.nextProps}>Next</button>
      {this.state.imageData.map(e => {
        return (
-         <Images imageUrlData = {e.baseimageurl} />
+         <Images
+          imageUrlData = {e.baseimageurl}
+          />
        )
      })}
     </div>);

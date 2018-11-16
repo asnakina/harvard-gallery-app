@@ -9,4 +9,3 @@ function Images(props) {
 }
 
 export default Images;
-  // <button type="button" onClick = {prop.ha}>Next</button>
