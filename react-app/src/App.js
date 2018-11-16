@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import './style.css';
 import axios from 'axios';
-import NavBar from './components/NavBar';
-import Images from './components/Images';
+import ZeroPage from './components/ZeroPage';
 import LandingPage from './components/LandingPage';
+import NavBar from './components/NavBar';
 import Videos from './components/Videos';
+// import VideoList from './components/VideoList';
 import ImagesList from './components/ImagesList';
 import GalleryList from './components/GalleryList';
-//import Classification from './components/Classification';
+import ClassificationList from './components/ClassificationList';
 import AddressesList from './components/AddressesList';
-import ZeroPage from './components/ZeroPage';
 
 //how can i type only 1 BASE_URL and change only {TOPIC} in the middle and num. of page in the end?
 const BASE_URL = `https://api.harvardartmuseums.org/`
@@ -26,12 +26,7 @@ class App extends Component {
   this.state = {
     galleryData: [],
     videoData: [],
-    // imageData: [],
-    // addressesData: [],
-    // baseimageurl: [],
-    // renditionnumber: '',
     currentView: 'zeroView',
-    // value: '',
     imageURL: '',
     videoURL: '',
     lastNum: 1,
@@ -43,21 +38,21 @@ class App extends Component {
  }
 
  async fetchData(category) {
-   const newUrl = `${BASE_URL}${category}?apikey=${process.env.REACT_APP_GALLERY_API_KEY}&page=${this.state.lastNum}`;
+  const newUrl=`${BASE_URL}${category}?apikey=${process.env.REACT_APP_GALLERY_API_KEY}&page=${this.state.lastNum}`;
    // if (category === 'image') {
    //   this.setState({imageURL: newUrl})
    // }
    const resp = await axios(newUrl);
-    console.log(resp);
+   console.log(resp);
    this.setState({
      galleryData: resp.data.records
-   })
+   });
    console.log(this.state.galleryData)
  }
 
  next() {
-    this.setState({
-       lastNum: this.state.lastNum + 1
+   this.setState({
+      lastNum: this.state.lastNum + 1
     });
     this.getView();
  }
@@ -74,7 +69,6 @@ class App extends Component {
  }
 
  handleClick(e) {
-   
    const value = e.target.value;
    this.setState({currentView: value})
  }
@@ -97,6 +91,10 @@ class App extends Component {
      return(
        <GalleryList />
      );
+     case 'classifView':
+     return(
+       <ClassificationList />
+     );
      // <div>
      //   <button onClick = {this.next}>Next</button>
      //  {this.state.galleryData.map(e => {
@@ -109,22 +107,27 @@ class App extends Component {
      return(
        <AddressesList />
      );
-       case 'videosView':
-       this.fetchData('video');
+     case 'videosView':
+     this.fetchData('video');
        return (
          <div>
          {this.state.galleryData.map(e => {
            return (
-             <Videos videolinkData = {e.primaryurl}
-                  videoDescrData = {e.description}
+            <Videos
+            videolinkData = {e.primaryurl}
+            videoDescrData = {e.description}
              />
            )
          })}
          </div>)
+       //   case 'videosView':
+       //   return (
+       //   <VideoList />
+       // );
        case 'mainView':
        return <LandingPage />
-       // case 'addressesView':
-       // return <Addresses addressData = {this.state.galleryData}
+       //case 'addressesView':
+       //return <Addresses addressData={this.state.galleryData}
        case 'zeroView':
        return <ZeroPage handleClick = {this.handleClick} />
      }

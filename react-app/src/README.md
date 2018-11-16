@@ -11,8 +11,7 @@ The site loads the ....
 When you choose a section by clicking on it, the page will appear with ....
 
 ## Wireframe images
-You can find wireframe images:
-![wireframe](./wireframes/wireframe1.jpg)
+You can find wireframe images ...
 
 https://api.harvardartmuseums.org/video?apikey=c618a9f0-e782-11e8-ac8f-15dc77ff48b1& - videos 36 items by "primaryurl", "description", "copyright"
 

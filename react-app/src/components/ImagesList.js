@@ -5,7 +5,7 @@ import axios from 'axios';
 const BASE_URL = `https://api.harvardartmuseums.org/`
 
 class ImagesList extends Component {
-  constructor(props){
+  constructor(props) {
    super(props)
    this.state = {
      imageData: []
@@ -13,7 +13,6 @@ class ImagesList extends Component {
  }
 
  async componentDidMount() {
-   // e.preventDefault()
    await this.fetchData();
  }
 

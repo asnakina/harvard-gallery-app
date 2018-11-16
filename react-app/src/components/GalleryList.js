@@ -27,7 +27,7 @@ class GalleryList extends Component {
    let respAdd = [];
 
    while( number < 8){
-     let newUrl = `${BASE_URL}gallery?apikey=${process.env.REACT_APP_GALLERY_API_KEY}&${number}`;
+     let newUrl = `${BASE_URL}gallery?apikey=${process.env.REACT_APP_GALLERY_API_KEY}&page=${number}`;
      newArr.push(newUrl)
      number += 1;
    }
@@ -38,10 +38,10 @@ class GalleryList extends Component {
      console.log('this is resp', resp)
      console.log('this is resp.data.records', resp.data.records)
      respAdd = respAdd.concat(resp.data.records)
-     //respAdd - it's an array of objects after using axios
+    //respAdd - it's an array of objects after using axios
      console.log('this is respAdd', respAdd)
    }
-   // console.log(respAdd);
+   //console.log(respAdd);
    this.setState({
      galleryData: respAdd,
      selectedItem: respAdd[1].name,
