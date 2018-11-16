@@ -51,7 +51,8 @@ class GalleryList extends Component {
  }
 
  handleChange(e) {
-   let obj = this.state.galleryData.find(obj => obj.name == e.target.value)
+   //we use id because it's unic
+   let obj = this.state.galleryData.find(obj => obj.id == e.target.value)
    this.setState({
      selectedItem: e.target.value,
      selectedObj: obj
@@ -73,7 +74,7 @@ class GalleryList extends Component {
         // value={this.state.value}*/}
       <select onChange = {this.handleChange}>
         {this.state.galleryData.map((eachObj, index) => (
-          <option value={eachObj.name} key={index}>{eachObj.name}</option>
+          <option value={eachObj.id} key={index}>{eachObj.name}</option>
         ))}
       </select>
       {this.state.selectedObj ?
