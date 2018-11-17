@@ -14,14 +14,12 @@ class AddressesList extends Component {
  }
 
  async componentDidMount() {
-   // e.preventDefault()
    await this.fetchData();
    console.log('mount')
  }
 
   async fetchData() {
-    const newUrl = 'https://api.harvardartmuseums.org/site?apikey=c618a9f0-e782-11e8-ac8f-15dc77ff48b1&'
-    // const newUrl = `${BASE_URL}site?apikey=${process.env.REACT_APP_GALLERY_API_KEY}&page1`;
+    const newUrl = `${BASE_URL}site?apikey=${process.env.REACT_APP_GALLERY_API_KEY}&`;
     const resp = await axios(newUrl);
      console.log(resp);
       this.setState({

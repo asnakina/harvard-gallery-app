@@ -17,15 +17,28 @@ class ClassificationList extends Component {
   }
 
   async fetchData() {
-    const newUrl = `${BASE_URL}classification?apikey=${process.env.REACT_APP_GALLERY_API_KEY}&`;
-    const resp = await axios(newUrl);
-    console.log(resp);
+    let number = 1;
+    //newArr is an array of 7 links
+    const newArr = [];
+    //respAdd is an array of objects after using axios
+    let respAdd = [];
+
+    while (number <= 7) {
+    let newUrl = `${BASE_URL}classification?apikey=${process.env.REACT_APP_GALLERY_API_KEY}&page=${number}`;
+    newArr.push(newUrl)
+    number += 1;
+  }
+  for (let i=0; i < 7; i++) {
+    const resp = await axios(newArr[i]);
+    respAdd = respAdd.concat(resp.data.records)
+  }
+
     this.setState({
-      classificationData: resp.data.records
+      classificationData: respAdd
    })
    console.log(this.state.classificationData)
   }
-  
+
   render(){
    return (
      <div>
