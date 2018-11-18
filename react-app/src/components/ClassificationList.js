@@ -8,8 +8,12 @@ class ClassificationList extends Component {
   constructor(props){
     super(props)
     this.state = {
-      classificationData: []
+      classificationData: [],
+      searchInput: '',
+      searchOutput: ''
     }
+    this.handleSearch = this.handleSearch.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
   async componentDidMount() {
@@ -39,15 +43,49 @@ class ClassificationList extends Component {
    console.log(this.state.classificationData)
   }
 
-  render(){
+  handleSearch(e) {
+    const value = e.target.value
+    this. setState ({
+      searchInput: value
+    });
+  }
+
+  handleSubmit() {
+    this.fetchData(this.state.searchInput);
+  }
+
+  // getSearch(searchInput){
+  //   if(searchInput === classifProps) {
+  //   this.setState({
+  //     searchOutput: classifProps
+  //    })
+  //   }
+  // }
+
+  render() {
    return (
      <div>
-      {this.state.classificationData.map(e => {
+      <div>
+       <input
+         type="text"
+         onChange={this.handleSearch}
+         value={this.searchInput}
+       />
+       <button onClick={this.handleSubmit}>Search</button>
+      </div>
+      <div>
+       <input
+         type="text"
+         onChange={this}
+         value={this.searchOutput}
+       />
+      </div>
+        {this.state.classificationData.map(e => {
          return(
-       <Classification
-           classifProps = {e.name} />
-     )
-   })}
+           <Classification
+             classifProps = {e.name} />
+         )
+      })}
    </div>);
  }
 }

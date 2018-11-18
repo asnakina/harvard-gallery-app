@@ -9,6 +9,7 @@ import ImagesList from './components/ImagesList';
 import GalleryList from './components/GalleryList';
 import ClassificationList from './components/ClassificationList';
 import AddressesList from './components/AddressesList';
+//import NewForm from './components/NewForm';
 
 class App extends Component {
   constructor(props) {
@@ -64,14 +65,16 @@ class App extends Component {
        prevProps = {this.prev}
        />
      );
+     case 'videosView':
+       return <VideosList />
      case 'galleryView':
        return <GalleryList />
      case 'classifView':
        return <ClassificationList />
      case 'addressesView':
        return <AddressesList />
-     case 'videosView':
-       return <VideosList />
+     // case 'newFormView':
+     //   return <NewForm />
      case 'mainView':
        return <LandingPage />
      case 'EntranceView':
