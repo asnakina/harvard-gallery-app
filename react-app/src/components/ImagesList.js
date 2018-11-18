@@ -35,8 +35,11 @@ class ImagesList extends Component {
   render(){
   return (
     <div>
-      <button type="button" onClick = {this.props.prevProps}>Previous</button>
-      <button type="button" onClick = {this.props.nextProps}>Next</button>
+    <div className="BtnImgDivStyle">
+      <button type="button" onClick = {this.props.prevProps} className="ImgBtnStyle">Previous</button>
+      <button type="button" onClick = {this.props.nextProps} className="ImgBtnStyle">Next</button>
+    </div>
+    <div className="ImgListStyle">
      {this.state.imageData.map(e => {
        return (
          <Images
@@ -44,6 +47,7 @@ class ImagesList extends Component {
          />
        )
      })}
+    </div>
     </div>);
   }
 }

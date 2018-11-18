@@ -64,7 +64,7 @@ class ClassificationList extends Component {
 
   render() {
    return (
-     <div>
+     <div className="ClassifListStyle">
       <div>
        <input
          type="text"

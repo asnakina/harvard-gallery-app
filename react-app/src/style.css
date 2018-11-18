@@ -1,23 +1,210 @@
+@import url('https://fonts.googleapis.com/css?family=Kumar+One+Outline');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .App {
   text-align: center;
 }
-
-.imgClass {
-  width: 500px;
-}
-
+      /* Entrance page: */
 .EntrancePageImg {
-  background-image: url('./images/ZeroPage.jpg');
-  width: 100%;
-  height: 100%;
+  background-image: url('./images/img3.jpg');
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
 }
 
-.smallImg {
+.triangleImg {
+  position: absolute;
+  margin-left: 200px;
+  margin-top: 630px;
+  width: 200px;
+  height: 150px;
+}
+
+.EntrBtnStyle {
+}
+
+       /* Landing page: */
+.LandingImg {
+  background-image: url('./images/img2.jpg');
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+}
+      /* Animation - Appearing from the left: */
+.AnimationDiv {
+  top: 200px;
+  width: 600px;
+  height: 150px;
+  opacity: 0.8;
+  background: black;
+  color: white;
+  font-size: 30px;
+  animation: leftRight 3s;
+  position: absolute;
+  left: 425px
+}
+
+@keyframes leftRight {
+	0%{
+    left: -600px;
+  }
+  100% {
+    left: 425px;
+  }
+}
+       /* NavBar: */
+.NavBarStyle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100px;
+  position: fixed;
+  background: white;
+  opacity: 0.9;
+}
+
+.NavBtnStyle {
+  width: 150px;
+  height: 100px;
+  background: black;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+      /* Images category: */
+.ImgListStyle {
+  /* border: solid red; */
+}
+
+.BtnImgDivStyle {
+  padding-top: 110px;
+  padding-bottom: 20px;
+  /* border: solid red; */
+}
+
+.ImgBtnStyle {
+  width: 150px;
+  height: 60px;
+  background: white;
+  color: black;
+  font-size: 20px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 500;
+  margin-left: 10px;
+}
+
+       /* Scaling animation for images */
+.ImagesStyle {
+  width: 500px;
+  transition: all 1s ease-in-out;
+}
+
+.ImagesStyle:hover {
+  transform: scale(1.2);
+}
+
+      /* Videos category: */
+.VideosListStyle {
+    padding-top: 120px;
+    display: flex;
+    flex: 2;
+    flex-wrap: wrap;
+    font-size: 15px;
+}
+
+.VideosStyle {
+  width: 500px;
+  height: 427px;
+  frameborder: 0;
+}
+
+      /* Gallery category: */
+.GalleryListStyle {
+  padding-top: 120px;
+}
+
+.SelectStyle {
   width: 300px;
-  height: 200px;
+  height: 50px;
+  font-weight: 500;
+  font-size: 20px;
+  align-self: center;
 }
 
+.GalleryStyle {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: right; */
+  align-items: flex-start;
+  font-size: 25px;
+}
+
+      /* Classification category: */
+.ClassifListStyle {
+  padding-top: 120px;
+  /* border: solid red; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ClassifStyle {
+  /* border: solid red; */
+  font-size: 20px;
+}
+      /* Addresses category: */
+.AddressListStyle {
+  padding-top: 120px;
+  display: flex;
+  justify-content: space-around;
+  font-size: 20px;
+}
+
+.AddressStyle {
+  text-decoration: none;
+  border: solid red;
+}
+
+.AddressUlStyle >li {
+  text-decoration: none;
+}
+
+.AddressImagesStyle {
+  display: flex;
+  justify-content: space-around;
+}
+
+    /* Morth - round effect on hover for images */
 .addressImg {
-  width: 300px;
-  height: 200px;
+  margin-top: 30px;
+  width: 490px;
+  height: 370px;
+  cursor: pointer;
+  border: solid white;
+  transition: all 0.5s ease;
 }
+
+.addressImg:hover {
+  border-radius: 50%;
+}
+
+/* Getting wider effect for images */
+/* .addressImg {
+    width: 490px;
+  .addressImg:hover {
+    width: 520px;
+    transition-duration: 1.5s; */
+
+/* Rotate animation */
+/*    transition: all 0.5s ease-in-out;
+.VideosStyle:hover {
+    transform: rotate(2deg);
+}*/

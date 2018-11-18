@@ -2,7 +2,7 @@ import React from 'react';
 
 function Classification(props) {
   return(
-    <div>
+    <div className="ClassifStyle">
       <p>{props.classifProps}</p>
     </div>
   )

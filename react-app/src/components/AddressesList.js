@@ -1,6 +1,9 @@
 import React, {Component} from 'react';
 import Addresses from './Addresses';
 import axios from 'axios';
+import address1 from '../images/address1.jpg';
+import address2 from '../images/address2.jpg';
+import address3 from '../images/address3.jpg';
 
 const BASE_URL = `https://api.harvardartmuseums.org/`
 
@@ -31,6 +34,7 @@ class AddressesList extends Component {
   render(){
   return (
     <div>
+    <div className="AddressListStyle">
      {this.state.addressesData.map(e => {
        return (
          <Addresses
@@ -41,7 +45,13 @@ class AddressesList extends Component {
           />
        )
      })}
-    </div>);
+    </div>
+    <div className="AddressImagesStyle">
+      <img src={address1} className="addressImg" />
+      <img src={address2} className="addressImg" />
+      <img src={address3} className="addressImg" />
+    </div>
+  </div>);
   }
 }
 

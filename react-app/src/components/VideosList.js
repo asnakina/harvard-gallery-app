@@ -27,7 +27,7 @@ class VideosList extends Component {
 
   render(){
     return (
-      <div>
+      <div className="VideosListStyle">
       {this.state.videosData.map(e => {
         return (
           <Videos
