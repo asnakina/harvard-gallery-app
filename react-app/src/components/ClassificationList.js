@@ -40,7 +40,6 @@ class ClassificationList extends Component {
     this.setState({
       classificationData: respAdd
    })
-   console.log(this.state.classificationData)
   }
 
   handleSearch(e) {

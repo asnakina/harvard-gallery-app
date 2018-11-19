@@ -13,22 +13,18 @@ class AddressesList extends Component {
    this.state = {
      addressesData: []
    }
-   console.log(this.state.addressesData)
  }
 
  async componentDidMount() {
    await this.fetchData();
-   console.log('mount')
  }
 
   async fetchData() {
     const newUrl = `${BASE_URL}site?apikey=${process.env.REACT_APP_GALLERY_API_KEY}&`;
     const resp = await axios(newUrl);
-     console.log(resp);
       this.setState({
       addressesData: resp.data.records
     })
-    console.log(this.state.addressesData)
   }
 
   render(){

@@ -41,7 +41,6 @@ class GalleryList extends Component {
      selectedItem: respAdd[1].name,
      selectedObj: respAdd[1]
    })
-   // console.log(this.state.galleryData)
  }
 
  handleChange(e) {
@@ -51,7 +50,6 @@ class GalleryList extends Component {
      selectedItem: e.target.value,
      selectedObj: obj
    })
-   console.log(obj)
  }
 
  render(){

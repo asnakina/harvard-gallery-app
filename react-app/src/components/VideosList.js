@@ -36,7 +36,6 @@ class VideosList extends Component {
     this.setState({
       videosData: respAdd
     })
-    console.log(this.state.videosData)
   }
 
   render(){
