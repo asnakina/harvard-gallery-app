@@ -1,6 +1,6 @@
 import React from 'react'
 
-function LandingPage() {
+function LandingPage(props) {
   return (
     <div class="LandingImg">
        <div className="AnimationDiv">

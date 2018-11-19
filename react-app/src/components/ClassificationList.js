@@ -32,7 +32,7 @@ class ClassificationList extends Component {
     newArr.push(newUrl)
     number += 1;
   }
-  for (let i=0; i < 7; i++) {
+    for (let i=0; i < 7; i++) {
     const resp = await axios(newArr[i]);
     respAdd = respAdd.concat(resp.data.records)
   }
@@ -65,20 +65,25 @@ class ClassificationList extends Component {
   render() {
    return (
      <div className="ClassifListStyle">
-      <div>
-       <input
-         type="text"
-         onChange={this.handleSearch}
-         value={this.searchInput}
-       />
-       <button onClick={this.handleSubmit}>Search</button>
-      </div>
-      <div>
-       <input
-         type="text"
-         onChange={this}
-         value={this.searchOutput}
-       />
+      <div className="SearchBarStyle">
+         <input
+           type="text"
+           onChange={this.handleSearch}
+           value={this.searchInput}
+           placeholder="What do you want to search?"
+          className="SearchItemsClassif"
+         />
+         <button
+         onClick={this.handleSubmit}
+         className="SearchItemsClassif"
+         >Search</button>
+         <input
+           type="text"
+           onChange={this}
+           value={this.searchOutput}
+           placeholder="Here's the result"
+           className="SearchItemsClassif"
+         />
       </div>
         {this.state.classificationData.map(e => {
          return(

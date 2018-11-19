@@ -59,7 +59,7 @@ class GalleryList extends Component {
    <div className="GalleryListStyle">
       <select onChange = {this.handleChange} className="SelectStyle">
         {this.state.galleryData.map((eachObj, index) => (
-          <option value={eachObj.id} key={index}>{eachObj.name}</option>
+          <option value={eachObj.id} key={index} className="OptionStyle">{eachObj.name}</option>
         ))}
       </select>
       {/* writing conditional/triple/ternary operator */}

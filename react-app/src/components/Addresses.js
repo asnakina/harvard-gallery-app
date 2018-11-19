@@ -3,18 +3,13 @@ import React from 'react';
 
 function Addresses(props) {
   return (
-    <div className="AddressStyle">
     <div>
       <ul className="AddressUlStyle">
-       <li>Name: {props.addressUrlDataName}</li>
-       <li>Address: {props.addressUrlDataAddress}</li>
-       <li>Longitude: {props.addressUrlDataLongitude}</li>
-       <li>Latitude: {props.addressUrlDataLatitude}</li>
+       <li><span className="AddressesLabel">Name:</span> <span className="AddressesValue">{props.addressUrlDataName}</span></li>
+       <li><span className="AddressesLabel">Address:</span> <span className="AddressesValue">{props.addressUrlDataAddress}</span></li>
+       <li><span className="AddressesLabel">Longitude:</span> <span className="AddressesValue">{props.addressUrlDataLongitude}</span></li>
+       <li><span className="AddressesLabel">Latitude:</span> <span className="AddressesValue">{props.addressUrlDataLatitude}</span></li>
       </ul>
-    </div>
-    <div>
-       {/*<img src={address1} className="addressImg" />*/}
-    </div>
     </div>
   )
 }

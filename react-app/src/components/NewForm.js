@@ -14,46 +14,47 @@ class NewForm extends Component {
       date: '',
       contacts: ''
     }
-    this.handleChange = this.handleChange.bind(this)
-    this.handleSubmit = this.handleSubmit.bind(this)
-    this.createForm = this.createForm.bind(this)
+    // this.handleChange = this.handleChange.bind(this)
+    // this.handleSubmit = this.handleSubmit.bind(this)
+    // this.createForm = this.createForm.bind(this)
   }
 
  //the function for input fields
-  handleChange(e) {
-     const value = e.target.value
-     this.setState({
-       newForm: value
-     })
- }
-
- //the function for the submit button
-  handleSubmit(e) {
-    const newArr = this.state.forms
-    const newForm = {
-      subject: this.state.subject,
-      describtion: this.state.describtion,
-      date: this.state.date,
-      personName: this.state.personName,
-      contacts: this.state.contacts
-    }
-  }
-
-  //we're pushing new form to the array of forms and updating it
-    createForm() {
-      return this.state.forms.map(theForm => {
-        return (
-          <button onSubmit={() => this.setState({
-            forms: theForm.push
-          })}>
-          </button>
-      )}
-     }
+ //  handleChange(e) {
+ //     const value = e.target.value
+ //     this.setState({
+ //       newForm: value
+ //     })
+ // }
+ //
+ // //the function for the submit button
+ //  handleSubmit(e) {
+ //    const newArr = this.state.forms
+ //    const newForm = {
+ //      subject: this.state.subject,
+ //      describtion: this.state.describtion,
+ //      date: this.state.date,
+ //      personName: this.state.personName,
+ //      contacts: this.state.contacts
+ //    }
+ //  }
+ //
+ //  //we're pushing new form to the array of forms and updating it
+ //    createForm() {
+ //      return this.state.forms.map(theForm => {
+ //        return (
+ //          <button onSubmit={() => this.setState({
+ //            forms: theForm.push
+ //          })} >
+ //          </button>
+ //      )}
+ //     }
 
   render() {
     return (
       <div>
-        <input
+        <h3>This page is under construction. We're working on it. Come back in 1 month. </h3>
+        {/*<input
           type="text"
           value={this.state.subject}
           onChange={this.handleChange}
@@ -90,7 +91,7 @@ class NewForm extends Component {
           <li>{theForm.date}</li>
           <li>{theForm.personName}</li>
           <li>{theForm.contacts}</li>
-         </ul>
+         </ul>*/}
       </div>
     )
   }

@@ -8,7 +8,7 @@ function Videos(props) {
   const id = urlArray[urlArray.length - 1];
 
   return (
-    <div>
+    <div className="allVideos">
       <h2>{props.videosDescrData}</h2>
       <iframe src={`https://player.vimeo.com/video/${id}?title=0&byline=0&portrait=0`} frameborder="0" className="VideosStyle"></iframe>
       <a href = {props.videolinkData} target="__html">{props.videolinkData}</a>

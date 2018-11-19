@@ -1,4 +1,6 @@
-@import url('https://fonts.googleapis.com/css?family=Kumar+One+Outline');
+@import url('https://fonts.googleapis.com/css?family=Alegreya|Amatic+SC|Courgette|Permanent+Marker|Sedgwick+Ave" rel="stylesheet');
+/*font-family: 'Permanent Marker', cursive;
+font-family: 'Alegreya', serif; */
 
 * {
   margin: 0;
@@ -6,10 +8,14 @@
   box-sizing: border-box;
 }
 
+input, button, select, option {
+  font-family: inherit;
+}
+
 .App {
   text-align: center;
 }
-      /* Entrance page: */
+       /* Entrance page: */
 .EntrancePageImg {
   background-image: url('./images/img3.jpg');
   background-size: cover;
@@ -17,17 +23,47 @@
   height: 100vh;
 }
 
-.triangleImg {
+.triangleImg, .EntrBtnStyle {
   position: absolute;
-  margin-left: 200px;
-  margin-top: 630px;
+  top: 77%;
+  left: 65%;
   width: 200px;
   height: 150px;
+  animation: moveScale 3s infinite alternate;
 }
 
-.EntrBtnStyle {
+.triangleImg {
+  z-index: 1;
+  pointer-events: none;
+  animation-delay: -.2s;
 }
 
+.EntrBtnStyle { */
+  /* used site https://bennettfeely.com/clippy/ for this feature */
+  -webkit-clip-path: polygon(61% 96%, 5% 24%, 90% 8%);
+  clip-path: polygon(61% 96%, 5% 24%, 90% 8%);
+  cursor: pointer;
+}
+
+.EntrBtnStyle > span {
+  position: absolute;
+  top: 20%;
+  left: 24%;
+  font-size: 30px;
+  font-weight: bold;
+  font-family: 'Permanent Marker', cursive;
+  pointer-events: none;
+  transform: rotate(-5deg);
+}
+
+@keyframes moveScale {
+  0% {
+  transform: scale(1.0) rotate(3deg);
+}
+  100% {
+    transform: scale(1.5) rotate(3deg);
+  }
+}
        /* Landing page: */
 .LandingImg {
   background-image: url('./images/img2.jpg');
@@ -35,7 +71,7 @@
   width: 100vw;
   height: 100vh;
 }
-      /* Animation - Appearing from the left: */
+       /* Animation - Appearing from the left: */
 .AnimationDiv {
   top: 200px;
   width: 600px;
@@ -44,9 +80,10 @@
   background: black;
   color: white;
   font-size: 30px;
+  font-family: 'Alegreya', serif;
   animation: leftRight 3s;
   position: absolute;
-  left: 425px
+  left: 425px;
 }
 
 @keyframes leftRight {
@@ -80,7 +117,7 @@
 
       /* Images category: */
 .ImgListStyle {
-  /* border: solid red; */
+ /* border: solid red; */
 }
 
 .BtnImgDivStyle {
@@ -94,13 +131,13 @@
   height: 60px;
   background: white;
   color: black;
-  font-size: 20px;
+  font-size: 30px;
+  font-family: 'Permanent Marker', cursive;
   border-radius: 12px;
   cursor: pointer;
   font-weight: 500;
   margin-left: 10px;
 }
-
        /* Scaling animation for images */
 .ImagesStyle {
   width: 500px;
@@ -113,52 +150,107 @@
 
       /* Videos category: */
 .VideosListStyle {
-    padding-top: 120px;
-    display: flex;
-    flex: 2;
-    flex-wrap: wrap;
-    font-size: 15px;
+  padding-top: 120px;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 17px;
+  font-weight: none;
+  font-family: 'Permanent Marker', cursive;
+  /* border: solid green; */
 }
 
 .VideosStyle {
-  width: 500px;
+  width: 600px;
   height: 427px;
   frameborder: 0;
+  /* border: solid red; */
+}
+
+.allVideos {
+  /* border: solid blue; */
+  display: flex;
+  flex: 2;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-bottom: 10px;
+  /* min-height: 600px; */
+}
+
+.allVideos > h2 {
+  width: 600px;
+  height: 70px;
 }
 
       /* Gallery category: */
 .GalleryListStyle {
   padding-top: 120px;
+  /* border: solid green; */
 }
 
 .SelectStyle {
   width: 300px;
   height: 50px;
-  font-weight: 500;
+  /* font-weight: 500; */
   font-size: 20px;
   align-self: center;
+  font-family: 'Permanent Marker', cursive;
+  /* border: solid red; */
+}
+
+.OptionStyle {
+  font-size: 20px;
+  font-family: 'Permanent Marker', cursive;
 }
 
 .GalleryStyle {
+  font-size: 25px;
+  font-family: 'Alegreya', serif;
+  padding: 0 20px;
+  /* border: solid blue; */
+}
+.GalleryStyle ul {
+    list-style: none;
   display: flex;
   flex-direction: column;
-  /* justify-content: right; */
-  align-items: flex-start;
-  font-size: 25px;
+  text-align: left;
+}
+
+.GallItemsCentered {
+  text-align: center;
 }
 
       /* Classification category: */
 .ClassifListStyle {
-  padding-top: 120px;
-  /* border: solid red; */
+  padding-top: 110px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  /* border: solid blue; */
 }
 
 .ClassifStyle {
   /* border: solid red; */
-  font-size: 20px;
+  font-size: 25px;
+  font-family: 'Alegreya', serif;
+}
+
+.SearchBarStyle {
+  /* border: solid green; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-bottom: 10px;
+  font-family: 'Permanent Marker', cursive;
+  /* font-family: 'Alegreya', serif; */
+}
+
+.SearchItemsClassif {
+  width: 300px;
+  height: 50px;
+  /* font-size: 20px; */
+  border-radius: 12px;
+  margin-top: 10px;
+  font-size: 25px;
 }
       /* Addresses category: */
 .AddressListStyle {
@@ -166,22 +258,33 @@
   display: flex;
   justify-content: space-around;
   font-size: 20px;
+  /* border: solid green; */
 }
 
-.AddressStyle {
-  text-decoration: none;
-  border: solid red;
-}
-
-.AddressUlStyle >li {
-  text-decoration: none;
+.AddressUlStyle {
+  list-style: none;
+  /* border: solid red; */
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+    /* width: 490px; */
+  margin-left: 40px;
+  font-size: 25px;
+  font-family: 'Alegreya', serif;
 }
 
 .AddressImagesStyle {
   display: flex;
   justify-content: space-around;
+  /* border: solid blue; */
 }
 
+.AddressesLabel {
+  font-weight: bold;
+  font-size: 25px;
+  font-family: 'Permanent Marker', cursive;
+}
     /* Morth - round effect on hover for images */
 .addressImg {
   margin-top: 30px;
@@ -190,21 +293,16 @@
   cursor: pointer;
   border: solid white;
   transition: all 0.5s ease;
+  flex: 1;
 }
 
 .addressImg:hover {
   border-radius: 50%;
 }
 
-/* Getting wider effect for images */
-/* .addressImg {
-    width: 490px;
-  .addressImg:hover {
-    width: 520px;
-    transition-duration: 1.5s; */
-
-/* Rotate animation */
-/*    transition: all 0.5s ease-in-out;
-.VideosStyle:hover {
-    transform: rotate(2deg);
-}*/
+   /* NewForm page */
+h3 {
+  padding-top: 250px;
+  font-size: 30px;
+  font-family: 'Alegreya', serif;
+}

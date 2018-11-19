@@ -4,8 +4,8 @@ function Gallery(props) {
   return(
     <div className="GalleryStyle">
       <ul>
-        <li>floor number: {props.galleryPropsFloor}</li>
-        <li>{props.galleryPropsTheme}</li>
+        <li className="GallItemsCentered">floor number: {props.galleryPropsFloor}</li>
+        <li className="GallItemsCentered">{props.galleryPropsTheme}</li>
         <li>{props.galleryPropsLabeltext}</li>
       </ul>
     </div>
