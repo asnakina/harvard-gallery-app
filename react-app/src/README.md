@@ -5,7 +5,8 @@
 It's a browser and mobile version of the app of Harvard Museum and Gallery.
 
 ## Wireframe images
-You can find wireframe images ...
+There is a wireframe image.
+!["Alt text"](../wireframes/wireframe1.JPG)
 
 ## Entrance page:
 When you load the site you will see the Entrance page with amusing animation triangle,
