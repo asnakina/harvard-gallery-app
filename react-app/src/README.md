@@ -9,6 +9,9 @@ https://www.youtube.com/watch?v=5Mrpg0SsrN0&feature=youtu.be
 !["Alt text"](./wireframes/screen3.jpg)
 !["Alt text"](./wireframes/screen4.jpg)
 
+## The link of this app:
+http://important-design.surge.sh/
+
 ## About the application:
 It's a browser and mobile version of the app of Harvard Museum and Gallery. It is written with ReactJS using API request.
 
