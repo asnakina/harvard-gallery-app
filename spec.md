@@ -1,9 +1,0 @@
-
-                      Specification for the app:
-
- 1. The site loads and the user will see the loading page with the ....
-
- 2. When a user chooses a section by clicking on it, the next page will appear with ....
-
- 3. The user selects a certain grid with ...
-
