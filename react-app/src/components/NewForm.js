@@ -6,92 +6,97 @@ class NewForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      forms: [],
-      newForm: {},
+      formsSubmition: [],
+      // newForm: {}
       subject: '',
       personName: '',
-      describtion: '',
+      description: '',
       date: '',
       contacts: ''
     }
-    // this.handleChange = this.handleChange.bind(this)
-    // this.handleSubmit = this.handleSubmit.bind(this)
-    // this.createForm = this.createForm.bind(this)
+    this.handleChange = this.handleChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
- //the function for input fields
- //  handleChange(e) {
- //     const value = e.target.value
- //     this.setState({
- //       newForm: value
- //     })
- // }
+ // the function for input fields
+  handleChange(e) {
+     const value = e.target.value
+     const name = e.target.name
+     this.setState({
+       //or [name]:value - means it's a variable from above
+       [e.target.name]: value
+   })
+ }
  //
- // //the function for the submit button
- //  handleSubmit(e) {
- //    const newArr = this.state.forms
- //    const newForm = {
- //      subject: this.state.subject,
- //      describtion: this.state.describtion,
- //      date: this.state.date,
- //      personName: this.state.personName,
- //      contacts: this.state.contacts
- //    }
- //  }
- //
- //  //we're pushing new form to the array of forms and updating it
- //    createForm() {
- //      return this.state.forms.map(theForm => {
- //        return (
- //          <button onSubmit={() => this.setState({
- //            forms: theForm.push
- //          })} >
- //          </button>
- //      )}
- //     }
+//the function for the submit button
+//we're pushing new submitionForm to the array of submitionForms
+  handleSubmit(e) {
+    //we create a new object
+    const newForm = {
+      name: this.state.personName,
+      subject: this.state.subject,
+      description: this.state.subject,
+      date: this.state.date,
+      contacts: this.state.contacts
+    }
+    this.setState({
+      formsSubmition: [...this.state.formsSubmition, newForm]
+    })
+  }
 
   render() {
     return (
-      <div>
-        <h3>This page is under construction. We're working on it. Come back in 1 month. </h3>
-        {/*<input
+      <div className="newFormDivStyle">
+        <input
           type="text"
+          name='subject'
           value={this.state.subject}
           onChange={this.handleChange}
           placeholder="Subject of your exhibition:"
+          className="newFormStyle"
         />
         <textarea
           type="text"
+          name='description'
           value={this.state.describtion}
           onChange={this.handleChange}
-          placeholder="Describtion of your exhibition:"
+          placeholder="Description of your exhibition:"
+          className="newFormStyle"
         />
         <input
           type="text"
+          name='date'
           value={this.state.date}
           onChange={this.handleChange}
           placeholder="Date for the exhibition:"
+          className="newFormStyle"
         />
         <input
           type="text"
+          name='personName'
           value={this.state.personName}
           onChange={this.handleChange}
           placeholder="Your name:"
+          className="newFormStyle"
         />
         <textarea
           type="text"
+          name='contacts'
           value={this.state.contacts}
           onChange={this.handleChange}
           placeholder="Your contacts:"
+          className="newFormStyle"
         />
-        <button onClick={this.handleSubmit}>Submit</button>
-        <ul>
-          <li>{theForm.subject}</li>
-          <li>{theForm.describtion}</li>
-          <li>{theForm.date}</li>
-          <li>{theForm.personName}</li>
-          <li>{theForm.contacts}</li>
-         </ul>*/}
+        {/* we're mapping the array with the objects information
+          this.state.formsSubmition.map(theForm => {
+                 return (
+                  <button onSubmit={() => this.setState({
+                   formsSubmitions: theForm.push
+                  })} >
+                  </button>
+              )}*/}
+         <button onClick={this.handleSubmit} className="newFormBtnStyle">Submit</button>
+
       </div>
     )
   }

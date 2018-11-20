@@ -44,22 +44,23 @@ class ClassificationList extends Component {
 
   handleSearch(e) {
     const value = e.target.value
-    this. setState ({
+    this.setState ({
       searchInput: value
     });
   }
 
-  handleSubmit() {
-    this.fetchData(this.state.searchInput);
-  }
+  getSearch(searchInput) {
+    const filtArr = this.state.classificationData.filter(e =>
+      e.name.includes(this.state.searchInput));
+      this.setState({
+        searchOutput: filtArr
+      })
+      console.log(filtArr)
+    }
 
-  // getSearch(searchInput){
-  //   if(searchInput === classifProps) {
-  //   this.setState({
-  //     searchOutput: classifProps
-  //    })
-  //   }
-  // }
+  handleSubmit() {
+    this.getSearch(this.state.searchInput);
+  }
 
   render() {
    return (
@@ -69,29 +70,31 @@ class ClassificationList extends Component {
            type="text"
            onChange={this.handleSearch}
            value={this.searchInput}
-           placeholder="What do you want to search?"
-          className="SearchItemsClassif"
-         />
-         <button
-         onClick={this.handleSubmit}
-         className="SearchItemsClassif"
-         >Search</button>
-         <input
-           type="text"
-           onChange={this}
-           value={this.searchOutput}
-           placeholder="Here's the result"
+           placeholder="What would you like to search?"
            className="SearchItemsClassif"
          />
+         <button
+           onClick={this.handleSubmit}
+           className="SearchItemsClassif"
+         >Search</button>
+         {/*<textarea
+           type="text"
+           onChange={this}
+           value={this.state.searchOutput}
+           placeholder="Here's the result"
+           className="SearchItemsClassif"
+         />*/}
       </div>
-        {this.state.classificationData.map(e => {
+        {/*{this.state.classificationData.map(e => {
          return(
            <Classification
              classifProps = {e.name} />
          )
-      })}
+      })}*/}
+        <Classification
+          classifProps = {this.state.searchOutput}/>
    </div>);
- }
+  }
 }
 
 export default ClassificationList;

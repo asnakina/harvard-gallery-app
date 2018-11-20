@@ -245,7 +245,7 @@ input, button, select, option {
 }
 
 .SearchItemsClassif {
-  width: 300px;
+  width: 340px;
   height: 50px;
   /* font-size: 20px; */
   border-radius: 12px;
@@ -305,4 +305,26 @@ h3 {
   padding-top: 250px;
   font-size: 30px;
   font-family: 'Alegreya', serif;
+}
+.newFormDivStyle {
+  padding-top: 110px;
+}
+
+.newFormStyle {
+  display: flex;
+  flex-direction: column;
+  width: 290px;
+  height: 70px;
+  margin: 0 auto;
+  /* font-size: 20px; */
+  border-radius: 12px;
+  margin-top: 10px;
+  font-size: 25px;
+}
+
+.newFormBtnStyle {
+  width: 290px;
+  height: 70px;
+  margin: 0 auto;
+  font-size: 25px;
 }
