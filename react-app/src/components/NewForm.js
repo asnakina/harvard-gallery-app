@@ -1,52 +1,88 @@
 import React, {Component} from 'react';
 
-//should it be a 1 big class component or a functional component
-//or a class and a funct.components?
 class NewForm extends Component {
   constructor(props) {
     super(props);
+    //this.state and props - it's an object with our data, it's not kind of real object
     this.state = {
       formsSubmition: [],
-      // newForm: {}
+      //newForm: {}
+      subject: '',
+      personName: '',
+      description: '',
+      date: '',
+      contacts: '',
+      temp: ''
+    }
+    //whenever we use functions in another components and use functions
+    this.handleChange = this.handleChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleDelete = this.handleDelete.bind(this)
+  }
+
+  //if it's a database we would say:
+  //async getAllFields() {
+  //const allFields = await axios.get(BASE_URL);
+
+ //the function for input fields
+ //e - event. when we call onChange or onClick triggers the event changes
+  handleChange(e) {
+    console.log(e.target)
+     this.setState({
+       //or [name]:value - means it's a variable from above
+       //it's refearing to the inputs inside the form
+       [e.target.name]: e.target.value
+   })
+ }
+
+ //the function for the submit button
+ //we're pushing new submitionForm to the array of submitionForms
+  handleSubmit(e) {
+    e.preventDefault();
+    //we create a new object and fill it up with whatever user puts in teaxarea
+    const newForm = {
+      name: this.state.personName,
+      subject: this.state.subject,
+      description: this.state.description,
+      date: this.state.date,
+      contacts: this.state.contacts
+    }
+    //!we put object into the array, because in our situation we can't post it!
+    this.setState({
+      formsSubmition: [...this.state.formsSubmition, newForm],
+      //and resetting the state after clickig on the button
       subject: '',
       personName: '',
       description: '',
       date: '',
       contacts: ''
-    }
-    this.handleChange = this.handleChange.bind(this)
-    this.handleSubmit = this.handleSubmit.bind(this)
+    })
   }
 
- // the function for input fields
-  handleChange(e) {
-     const value = e.target.value
-     const name = e.target.name
-     this.setState({
-       //or [name]:value - means it's a variable from above
-       [e.target.name]: value
-   })
- }
- //
-//the function for the submit button
-//we're pushing new submitionForm to the array of submitionForms
-  handleSubmit(e) {
-    //we create a new object
-    const newForm = {
-      name: this.state.personName,
-      subject: this.state.subject,
-      description: this.state.subject,
-      date: this.state.date,
-      contacts: this.state.contacts
+  handleDelete(e) {
+     let obj = this.state.formsSubmition.find(obj => obj.name == e.target.name)
+     // debugger
+     for(let i=0; i<this.state.formsSubmition.length; i++) {
+        if(this.state.formsSubmition[i] === obj){
+          //filter by id or slice for deleting function
+          this.setState({
+            formsSubmition: this.state.formsSubmition.splice(i,1)
+        })
+      }
     }
-    this.setState({
-      formsSubmition: [...this.state.formsSubmition, newForm]
-    })
   }
 
   render() {
     return (
-      <div className="newFormDivStyle">
+      <form onSubmit={this.handleSubmit} className="newFormDivStyle">
+        <input
+          type="text"
+          name='personName'
+          value={this.state.personName}
+          onChange={this.handleChange}
+          placeholder="Your name:"
+          className="newFormStyle"
+        />
         <input
           type="text"
           name='subject'
@@ -58,7 +94,7 @@ class NewForm extends Component {
         <textarea
           type="text"
           name='description'
-          value={this.state.describtion}
+          value={this.state.description}
           onChange={this.handleChange}
           placeholder="Description of your exhibition:"
           className="newFormStyle"
@@ -71,14 +107,6 @@ class NewForm extends Component {
           placeholder="Date for the exhibition:"
           className="newFormStyle"
         />
-        <input
-          type="text"
-          name='personName'
-          value={this.state.personName}
-          onChange={this.handleChange}
-          placeholder="Your name:"
-          className="newFormStyle"
-        />
         <textarea
           type="text"
           name='contacts'
@@ -87,17 +115,29 @@ class NewForm extends Component {
           placeholder="Your contacts:"
           className="newFormStyle"
         />
-        {/* we're mapping the array with the objects information
-          this.state.formsSubmition.map(theForm => {
-                 return (
-                  <button onSubmit={() => this.setState({
-                   formsSubmitions: theForm.push
-                  })} >
-                  </button>
-              )}*/}
-         <button onClick={this.handleSubmit} className="newFormBtnStyle">Submit</button>
-
-      </div>
+        <button
+          type="submit"
+          value="Submit"
+          className="newFormBtnStyle"
+        >Submit</button>
+        {/*We map because it's an array...theForm -is an object each element right now
+        We have to render theForm object
+        For Nested Messages*/}
+        {/* we're mapping the array with the objects information*/}
+        <div className="mainDivForm">
+        {this.state.formsSubmition.map(theElement => {
+          return (
+            <div key={theElement.name} className="formBorderStyle">
+              <p>{theElement.name}</p>
+              <p>{theElement.subject}</p>
+              <p>{theElement.description}</p>
+              <p>{theElement.date}</p>
+              <p>{theElement.contacts}</p>
+              <button name={theElement.name} onClick={this.handleDelete}>Delete</button>
+            </div>
+          )})}
+        </div>
+      </form>
     )
   }
 }

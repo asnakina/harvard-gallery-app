@@ -300,7 +300,7 @@ input, button, select, option {
   border-radius: 50%;
 }
 
-   /* NewForm page */
+                /* NewForm page */
 h3 {
   padding-top: 250px;
   font-size: 30px;
@@ -327,4 +327,24 @@ h3 {
   height: 70px;
   margin: 0 auto;
   font-size: 25px;
+}
+
+.formBorderStyle {
+  margin-top: 20px;
+  width: 250px;
+  height: 200px;
+  border: solid 3px black;
+  border-opacity: 0.7;
+  font-family: 'Permanent Marker', cursive;
+  font-size: 20px;
+  border-radius: 12px;
+}
+
+.mainDivForm  > p {
+  border-bottom: 5px;
+}
+
+.mainDivForm {
+  display: flex;
+  justify-content: space-around;
 }
