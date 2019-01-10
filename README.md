@@ -4,7 +4,7 @@ Like with project one, our Unit 2 project is a chance to be creative and build s
 
 ![Printscreen 2](/images/printscreen2.jpg)
 
-## A link to this deployed project via Surge:
+## The link to this deployed project via Surge:
 http://descriptive-push.surge.sh
 
 ## Youtube video link from the peresentation:
@@ -92,4 +92,13 @@ Used a search request feature. We return an array of names, using the map method
 #### Your exhibition request
 - _NewForm_: class component with form for adding exibition request and user information, with rendering as all forms and with option of delete a form.
 ![Printscreen 5](/images/printscreen5.jpg)
+
+##                          Instruction how to install the app:
+- open the terminal on your computer
+- you will run only a client side with: 
+1) cd react-app falder 2) npm i 3) npm run resetDb 4) npm run seed 5) npm run dev
+
+## Don't forget to run server first and after that the client.
+## Enjoy the app!
+
 
