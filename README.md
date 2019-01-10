@@ -98,7 +98,6 @@ Used a search request feature. We return an array of names, using the map method
 - you will run only a client side with: 
 1) cd react-app falder 2) npm i 3) npm run resetDb 4) npm run seed 5) npm run dev
 
-## Don't forget to run server first and after that the client.
 ## Enjoy the app!
 
 
