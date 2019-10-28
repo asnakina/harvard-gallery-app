@@ -1,6 +1,4 @@
 @import url('https://fonts.googleapis.com/css?family=Alegreya|Amatic+SC|Courgette|Permanent+Marker|Sedgwick+Ave" rel="stylesheet');
-/*font-family: 'Permanent Marker', cursive;
-font-family: 'Alegreya', serif; */
 
 * {
   margin: 0;
@@ -15,12 +13,14 @@ input, button, select, option {
 .App {
   text-align: center;
 }
-       /* Entrance page: */
+                               
+                                 /* Entrance page: */
 .EntrancePageImg {
   background-image: url('./images/img3.jpg');
   background-size: cover;
   width: 100vw;
   height: 100vh;
+  position: relative;
 }
 
 .triangleImg, .EntrBtnStyle {
@@ -38,7 +38,7 @@ input, button, select, option {
   animation-delay: -.2s;
 }
 
-.EntrBtnStyle { */
+.EntrBtnStyle { 
   /* used site https://bennettfeely.com/clippy/ for this feature */
   -webkit-clip-path: polygon(61% 96%, 5% 24%, 90% 8%);
   clip-path: polygon(61% 96%, 5% 24%, 90% 8%);
@@ -64,18 +64,20 @@ input, button, select, option {
     transform: scale(1.5) rotate(3deg);
   }
 }
-       /* Landing page: */
+
+                             /* Landing page: */
 .LandingImg {
   background-image: url('./images/img2.jpg');
   background-size: cover;
+  background-position: center;
   width: 100vw;
   height: 100vh;
 }
-       /* Animation - Appearing from the left: */
+
+                           /* Animation - Appearing from the left: */
 .AnimationDiv {
   top: 200px;
-  width: 600px;
-  height: 150px;
+  width: 80%;
   opacity: 0.8;
   background: black;
   color: white;
@@ -83,7 +85,8 @@ input, button, select, option {
   font-family: 'Alegreya', serif;
   animation: leftRight 3s;
   position: absolute;
-  left: 425px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 @keyframes leftRight {
@@ -91,16 +94,15 @@ input, button, select, option {
     left: -600px;
   }
   100% {
-    left: 425px;
+    left: 50%;
   }
 }
-       /* NavBar: */
+                                 /* NavBar: */
 .NavBarStyle {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: stretch;
   width: 100vw;
-  height: 100px;
   position: fixed;
   background: white;
   opacity: 0.9;
@@ -108,14 +110,14 @@ input, button, select, option {
 
 .NavBtnStyle {
   width: 150px;
-  height: 100px;
+  padding: ;
   background: black;
   color: white;
   font-size: 20px;
   cursor: pointer;
 }
 
-      /* Images category: */
+                                  /* Images category: */
 .ImgListStyle {
  /* border: solid red; */
 }
@@ -123,6 +125,7 @@ input, button, select, option {
 .BtnImgDivStyle {
   padding-top: 110px;
   padding-bottom: 20px;
+  text-align: center;
   /* border: solid red; */
 }
 
@@ -138,7 +141,7 @@ input, button, select, option {
   font-weight: 500;
   margin-left: 10px;
 }
-       /* Scaling animation for images */
+                                /* Scaling animation for images */
 .ImagesStyle {
   width: 500px;
   transition: all 1s ease-in-out;
@@ -148,7 +151,7 @@ input, button, select, option {
   transform: scale(1.2);
 }
 
-      /* Videos category: */
+                                /* Videos category: */
 .VideosListStyle {
   padding-top: 120px;
   display: flex;
@@ -173,7 +176,6 @@ input, button, select, option {
   flex-wrap: wrap;
   justify-content: center;
   padding-bottom: 10px;
-  /* min-height: 600px; */
 }
 
 .allVideos > h2 {
@@ -181,7 +183,7 @@ input, button, select, option {
   height: 70px;
 }
 
-      /* Gallery category: */
+                                /* Gallery category: */
 .GalleryListStyle {
   padding-top: 120px;
   /* border: solid green; */
@@ -190,7 +192,6 @@ input, button, select, option {
 .SelectStyle {
   width: 300px;
   height: 50px;
-  /* font-weight: 500; */
   font-size: 20px;
   align-self: center;
   font-family: 'Permanent Marker', cursive;
@@ -218,8 +219,8 @@ input, button, select, option {
 .GallItemsCentered {
   text-align: center;
 }
-
-      /* Classification category: */
+                           
+                            /* Classification category: */
 .ClassifListStyle {
   padding-top: 110px;
   display: flex;
@@ -241,18 +242,17 @@ input, button, select, option {
   justify-content: space-around;
   margin-bottom: 10px;
   font-family: 'Permanent Marker', cursive;
-  /* font-family: 'Alegreya', serif; */
 }
 
 .SearchItemsClassif {
   width: 340px;
   height: 50px;
-  /* font-size: 20px; */
   border-radius: 12px;
   margin-top: 10px;
   font-size: 25px;
 }
-      /* Addresses category: */
+
+                           /* Addresses category: */
 .AddressListStyle {
   padding-top: 120px;
   display: flex;
@@ -268,7 +268,6 @@ input, button, select, option {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-    /* width: 490px; */
   margin-left: 40px;
   font-size: 25px;
   font-family: 'Alegreya', serif;
@@ -300,7 +299,7 @@ input, button, select, option {
   border-radius: 50%;
 }
 
-                /* NewForm page */
+                              /* NewForm page */
 h3 {
   padding-top: 250px;
   font-size: 30px;
@@ -316,7 +315,6 @@ h3 {
   width: 290px;
   height: 70px;
   margin: 0 auto;
-  /* font-size: 20px; */
   border-radius: 12px;
   margin-top: 10px;
   font-size: 25px;
@@ -347,4 +345,81 @@ h3 {
 .mainDivForm {
   display: flex;
   justify-content: space-around;
+}
+
+                                /*---Media Queries --*/
+/* Medium (md) devices (tablets, 768px and up) */
+@media screen and (max-width: 768px) {
+
+}
+
+/* Small (sm) devices (landscape phones, 576px and up) */
+@media(max-width: 576px) {
+  .triangleImg, .EntrBtnStyle {
+    left: 0;
+  }
+
+  .AnimationDiv {
+    font-size: 20px;
+  }
+
+  .EntrancePageImg {
+    width: 100%;
+    /* height: auto; */
+  }
+
+  .LandingImg {
+    width: 100%;
+  }
+
+  .NavBarStyle {
+    flex-wrap: wrap;
+  }
+
+  .BtnImgDivStyle {
+    padding-top: 140px;
+  }
+
+  .ImagesStyle {
+    width: 100%;
+  }
+
+  .VideosStyle {
+    width: 100%;
+    height: auto;
+  }
+  
+  .VideosListStyle {
+    flex-direction: column;
+  }
+
+  .allVideos > h2 {
+    width: 100%;
+    font-size: 15px;
+  }
+
+  .allVideos > h2:first-child {
+    padding-top: 20px;
+  }
+
+  .AddressUlStyle {
+    flex-direction: column;
+  }
+
+  .AddressUlStyle > li {
+    width: 100%;
+  }
+
+  .AddressImagesStyle {
+    flex-wrap: wrap;
+  }
+
+  .AddressListStyle {
+    flex-direction: column;
+  }
+
+  .addressImg {
+    width: 100%;
+  }
+
 }

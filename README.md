@@ -96,7 +96,7 @@ Used a search request feature. We return an array of names, using the map method
 ##                          Instruction how to install the app:
 - open the terminal on your computer
 - you will run only a client side with: 
-1) cd react-app falder 2) npm i 3) npm run resetDb 4) npm run seed 5) npm run dev
+1) cd react-app 2) npm i 3) npm run resetDb 4) npm run seed 5) npm run dev
 
 ## Enjoy the app!
 
