@@ -45,7 +45,7 @@ class GalleryList extends Component {
 
  handleChange(e) {
    //we use id because it's unic
-   let obj = this.state.galleryData.find(obj => obj.id == e.target.value)
+   let obj = this.state.galleryData.find(obj => obj.id === e.target.value)
    this.setState({
      selectedItem: e.target.value,
      selectedObj: obj

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './style.css';
-import axios from 'axios';
+// import axios from 'axios';
 import EntrancePage from './components/EntrancePage';
 import LandingPage from './components/LandingPage';
 import NavBar from './components/NavBar';
@@ -19,6 +19,7 @@ class App extends Component {
     lastNum: 1
   }
   this.handleClick = this.handleClick.bind(this);
+  this.handleClickMenuText = this.handleClickMenuText.bind(this);
   this.next = this.next.bind(this);
   this.prev = this.prev.bind(this);
  }
@@ -46,6 +47,15 @@ class App extends Component {
    this.setState({
      currentView: value
    })
+ }
+
+ handleClickMenuText(e) {
+  const value = e.target.getAttribute('data-value');
+  console.log(value);
+  
+  this.setState({
+    currentView: value
+  })
  }
 
  //created new class Components Lists in order to prevent calling data again and again from switch statement
@@ -79,6 +89,8 @@ class App extends Component {
        return <LandingPage />
      case 'EntranceView':
        return <EntrancePage handleClick = {this.handleClick} />
+     default: 
+       return <LandingPage />
      }
  }
 
@@ -88,7 +100,7 @@ class App extends Component {
       <div className="App">
         {this.state.currentView === "EntranceView" ? null :
           <div>
-            <NavBar handleClick={this.handleClick} />
+            <NavBar handleClickMenuText={this.handleClickMenuText} />
           </div>}
         {this.getView()}
       </div>

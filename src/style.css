@@ -106,11 +106,15 @@ input, button, select, option {
   position: fixed;
   background: white;
   opacity: 0.9;
+  list-style-type: none;
+}
+
+.NavBarStyle > li {
+  border: 1px solid white;
 }
 
 .NavBtnStyle {
   width: 150px;
-  padding: ;
   background: black;
   color: white;
   font-size: 20px;
@@ -325,6 +329,10 @@ h3 {
   height: 70px;
   margin: 0 auto;
   font-size: 25px;
+  margin-top: 20px;
+  border: 2px solid black;
+  background: black;
+  color: white;
 }
 
 .formBorderStyle {
@@ -350,13 +358,16 @@ h3 {
                                 /*---Media Queries --*/
 /* Medium (md) devices (tablets, 768px and up) */
 @media screen and (max-width: 768px) {
-
+  .AddressImagesStyle > img {
+    width: 33%;
+    height: 200px;
+  }
 }
 
 /* Small (sm) devices (landscape phones, 576px and up) */
 @media(max-width: 576px) {
   .triangleImg, .EntrBtnStyle {
-    left: 0;
+    left: 40px;
   }
 
   .AnimationDiv {
@@ -374,6 +385,11 @@ h3 {
 
   .NavBarStyle {
     flex-wrap: wrap;
+  }
+
+  .NavBarStyle > li {
+    font-weight: 500;
+    border-radius: 10%;
   }
 
   .BtnImgDivStyle {
@@ -402,6 +418,10 @@ h3 {
     padding-top: 20px;
   }
 
+  .AddressUlStyle:first-child {
+    margin-top: 20px;
+  }
+
   .AddressUlStyle {
     flex-direction: column;
   }
@@ -418,8 +438,21 @@ h3 {
     flex-direction: column;
   }
 
+  .AddressImagesStyle > img {
+    width: 60%;
+    height: 270px;
+  }
+
   .addressImg {
     width: 100%;
+  }
+
+  .newFormDivStyle {
+    padding-top: 130px;
+  }
+
+  .SearchItemsClassif {
+    margin-top: 30px;
   }
 
 }

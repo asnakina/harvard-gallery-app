@@ -60,7 +60,7 @@ class NewForm extends Component {
   }
 
   handleDelete(e) {
-     let obj = this.state.formsSubmition.find(obj => obj.name == e.target.name)
+     let obj = this.state.formsSubmition.find(obj => obj.name === e.target.name)
      // debugger
      for(let i=0; i<this.state.formsSubmition.length; i++) {
         if(this.state.formsSubmition[i] === obj){
@@ -91,7 +91,7 @@ class NewForm extends Component {
           placeholder="Subject of your exhibition:"
           className="newFormStyle"
         />
-        <textarea
+        <input
           type="text"
           name='description'
           value={this.state.description}
@@ -107,7 +107,7 @@ class NewForm extends Component {
           placeholder="Date for the exhibition:"
           className="newFormStyle"
         />
-        <textarea
+        <input
           type="text"
           name='contacts'
           value={this.state.contacts}

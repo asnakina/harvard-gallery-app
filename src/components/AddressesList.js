@@ -43,9 +43,9 @@ class AddressesList extends Component {
      })}
     </div>
     <div className="AddressImagesStyle">
-      <img src={address1} className="addressImg" />
-      <img src={address2} className="addressImg" />
-      <img src={address3} className="addressImg" />
+      <img src={address1} className="addressImg" alt="first address view" />
+      <img src={address2} className="addressImg" alt="second address view"/>
+      <img src={address3} className="addressImg" alt="third address view"/>
     </div>
   </div>);
   }
