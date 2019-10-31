@@ -26,7 +26,7 @@ The code has many "views" in the application using conditional rendering in Reac
 ### Entrance page
 - contains the animation button to enter the app
 
-![Printscreen 1](/images/printscreen1.jpg)
+![Printscreen 1](/screenshots/printscreen1.jpg)
 
 ### Landing page
 - contains the animation with the name of the app
@@ -72,7 +72,7 @@ We return an array of images, using the map method.
 - _VideosList_: class component for _Videos_
 - _Videos_: rendered _Videos_ and details about them
 
-![Printscreen 3](/images/printscreen3.jpg)
+![Printscreen 3](/screenshots/printscreen3.jpg)
 
 #### Gallery choice
 - _GalleryList_: class component for _Gallery_, has a dropdown menu feature
@@ -87,11 +87,15 @@ Used a search request feature. We return an array of names, using the map method
 - _AddressesList_: class component for _Addresses_.
 - _Addresses_: rendered _Addresses_ and details about them.
 
-![Printscreen 4](/images/printscreen4.jpg)
+![Printscreen 4](/screenshots/printscreen4.jpg)
 
 #### Your exhibition request
 - _NewForm_: class component with form for adding exibition request and user information, with rendering as all forms and with option of delete a form.
-![Printscreen 5](/images/printscreen5.jpg)
+![Printscreen 5](/screenshots/printscreen5.jpg)
+
+#### Wireframing
+![Wireframe](/screenshots/wireframe1.jpg)
+
 
 ##                          Instruction how to install the app:
 - open the terminal on your computer
