@@ -5,7 +5,7 @@ Like with project one, our Unit 2 project is a chance to be creative and build s
 ![Printscreen 2](/images/printscreen2.jpg)
 
 ## The link to this deployed project via Surge:
-http://descriptive-push.surge.sh
+http://harvard-gallery.surge.sh
 
 ## Youtube video link from the peresentation:
 https://www.youtube.com/watch?v=5Mrpg0SsrN0&feature=youtu.be
@@ -96,7 +96,7 @@ Used a search request feature. We return an array of names, using the map method
 ##                          Instruction how to install the app:
 - open the terminal on your computer
 - you will run only a client side with: 
-1) cd react-app 2) npm i 3) npm run resetDb 4) npm run seed 5) npm run dev
+1) cd react-app 2) npm i 3) npm run start
 
 ## Enjoy the app!
 
