@@ -2,17 +2,10 @@
 A modern front end very stylish application was built using React.js. It is a working, interactive, React site, styled with CSS, using flexbox layout and many animations.
 Like with project one, our Unit 2 project is a chance to be creative and build something I can be proud of.
 
-![Printscreen 2](/images/printscreen2.jpg)
+![Printscreen 2](/screenshots/printscreen2.jpg)
 
 ## The link to this deployed project via Surge:
 http://harvard-gallery.surge.sh
-
-## Youtube video link from the peresentation:
-https://www.youtube.com/watch?v=5Mrpg0SsrN0&feature=youtu.be
-- A proposal included:
-	- A description of the project I was building with the objective described in non-technical language.
-	- An explanation of the major problems I planned to face while implementing this app.
-	- An explanation of how I foresee myself solving the aforementioned problems.
 
 ### Front-End Construction
 The front-end for this project is constructed with React.js, CSS and HTML. 
@@ -95,6 +88,13 @@ Used a search request feature. We return an array of names, using the map method
 
 #### Wireframing
 ![Wireframe](/screenshots/wireframe1.jpg)
+
+## Youtube video link from the peresentation:
+https://www.youtube.com/watch?v=5Mrpg0SsrN0&feature=youtu.be
+- A proposal included:
+- A description of the project I was building with the objective described in non-technical language.
+- An explanation of the major problems I planned to face while implementing this app.
+- An explanation of how I foresee myself solving the aforementioned problems.
 
 
 ##                          Instruction how to install the app:
